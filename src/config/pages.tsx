@@ -3,7 +3,7 @@ import ChakraPage from "../pages/UI/Chakra/ChakraPage";
 import Formik from "../pages/Forms&Validation/Formik";
 import MobxPage from "../pages/State/Mobx/MobxPage";
 import ReactHookFormPage from "../pages/Forms/ReactHookForm/ReactHookFormPage";
-
+import ReactRouterPage from "../pages/ReactRouter/ReactRouterPage";
 export type View =
   | "home"
   | "chakra"
@@ -29,4 +29,5 @@ export const pages: Partial<Record<View, React.ReactNode>> = {
   formik: <Formik />,
   mobx: <MobxPage />,
   "react-hook-form": <ReactHookFormPage />,
+  "react-router": <ReactRouterPage />,
 };
