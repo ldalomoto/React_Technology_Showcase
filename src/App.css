@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* LAYOUT */
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 280px;
+  background: #111827;
+  border-right: 1px solid #1f2937;
+  padding: 2rem;
+}
+
+.logo {
+  color: #38bdf8;
+  margin-bottom: 2rem;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* BOTÓN SECCIÓN */
+.menu-button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.75rem;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-button:hover {
+  background: #1e293b;
+}
+
+/* ITEM SIMPLE (HOME) */
+.menu-item {
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #1e293b;
+}
+
+/* SUBMENU */
+.submenu {
+  margin-left: 1rem;
+  margin-top: 0.3rem;
+  border-left: 2px solid #334155;
+  padding-left: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.submenu-item {
+  padding: 0.4rem 0.5rem;
+  color: #94a3b8;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.submenu-item:hover {
+  color: #38bdf8;
+  background: #0b1220;
+}
+
+.content {
+  flex: 1;
+  padding: 0; /* antes estaba en 3rem */
+  overflow-x: hidden;
+}
