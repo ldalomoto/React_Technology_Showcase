@@ -1,39 +1,12 @@
 import { useState } from "react";
+import { type View } from "../../config/pages";
+import { menuItems } from "../../config/menu";
 
-const menuItems = [
-  {
-    key: "ui",
-    title: "UI Frameworks",
-    items: ["Chakra UI", "Material UI", "Tailwind CSS"],
-  },
-  {
-    key: "state",
-    title: "State Management",
-    items: ["Context API", "MobX", "Zustand"],
-  },
-  {
-    key: "routing",
-    title: "Routing",
-    items: ["React Router", "TanStack Router"],
-  },
-  {
-    key: "forms",
-    title: "Forms & Validation",
-    items: ["Formik", "React Hook Form", "Zod"],
-  },
-  {
-    key: "hooks",
-    title: "Hooks",
-    items: ["useState", "useEffect", "useMemo", "useCallback"],
-  },
-  {
-    key: "testing",
-    title: "Testing",
-    items: ["Cypress"],
-  },
-];
-
-export default function Sidebar() {
+export default function Sidebar({
+  setView,
+}: {
+  setView: React.Dispatch<React.SetStateAction<View>>;
+}) {
   const [open, setOpen] = useState<string | null>(null);
 
   const toggle = (key: string) => {
@@ -46,7 +19,10 @@ export default function Sidebar() {
 
       <nav>
         <div className="menu">
-          <div className="menu-item">
+          <div
+            className="menu-item"
+            onClick={() => setView("home")}
+          >
             Inicio
           </div>
 
@@ -63,8 +39,12 @@ export default function Sidebar() {
               {open === section.key && (
                 <div className="submenu">
                   {section.items.map((item) => (
-                    <div key={item} className="submenu-item">
-                      {item}
+                    <div
+                      key={item.label}
+                      className="submenu-item"
+                      onClick={() => setView(item.view as View)}
+                    >
+                      {item.label}
                     </div>
                   ))}
                 </div>

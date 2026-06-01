@@ -1,11 +1,14 @@
+import { useState } from "react";
 import Layout from "./components/Layout/Layout";
-import Home from "./pages/Home/Home";
+import { pages, type View } from "./config/pages";
 import "./App.css";
 
 function App() {
+  const [view, setView] = useState<View>("home");
+
   return (
-    <Layout>
-      <Home />
+    <Layout setView={setView}>
+      {pages[view]}
     </Layout>
   );
 }
