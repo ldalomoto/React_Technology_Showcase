@@ -1,5 +1,9 @@
 import Home from "../pages/Home/Home";
 import ChakraPage from "../pages/UI/Chakra/ChakraPage";
+import Formik from "../pages/Forms&Validation/Formik";
+import MobxPage from "../pages/State/Mobx/MobxPage";
+import ReactHookFormPage from "../pages/Forms/ReactHookForm/ReactHookFormPage";
+import MaterialPage from "../pages/UI/Material/MaterialPage";
 
 export type View =
   | "home"
@@ -23,4 +27,8 @@ export type View =
 export const pages: Partial<Record<View, React.ReactNode>> = {
   home: <Home />,
   chakra: <ChakraPage />,
+  formik: <Formik />,
+  mobx: <MobxPage />,
+  "react-hook-form": <ReactHookFormPage />,
+  material: <MaterialPage />,
 };
