@@ -4,6 +4,7 @@ import Formik from "../pages/Forms&Validation/Formik";
 import MobxPage from "../pages/State/Mobx/MobxPage";
 import ReactHookFormPage from "../pages/Forms/ReactHookForm/ReactHookFormPage";
 import ZodPage from "../pages/Forms/Zod/ZodPage";
+import MaterialPage from "../pages/UI/Material/MaterialPage";
 
 export type View =
   | "home"
@@ -31,4 +32,5 @@ export const pages: Partial<Record<View, React.ReactNode>> = {
   mobx: <MobxPage />,
   "react-hook-form": <ReactHookFormPage />,
   zod: <ZodPage />,
+  material: <MaterialPage />,
 };
